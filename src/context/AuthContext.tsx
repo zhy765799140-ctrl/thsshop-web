@@ -52,7 +52,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     try {
       // 查询用户是否存在
-      const { data: existingUser, error: queryError } = await supabase
+      const { data: existingUser, error: _queryError } = await supabase
         .from('users')
         .select('*')
         .eq('phone', phone)

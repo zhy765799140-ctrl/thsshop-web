@@ -41,7 +41,7 @@ export default function Admin() {
   const { isAdmin } = useAuth();
   const { products, addProduct, updateProduct, deleteProduct } = useProducts();
   const { banner, updateBanner, payQrCode, updatePayQrCode } = useBanner();
-  const { orders, updateOrderStatus, updateOrderItem, updateOrderItemSize, deleteOrder } = useOrders();
+  const { orders, updateOrderStatus, updateOrderItem, deleteOrder } = useOrders();
   const [activeTab, setActiveTab] = useState<'products' | 'banner' | 'orders' | 'production' | 'payment'>('orders');
   const [showForm, setShowForm] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
@@ -347,10 +347,8 @@ export default function Admin() {
     URL.revokeObjectURL(url);
   };
 
-  const statusClass: Record<string, string> = {
-    paid: 'status-paid',
-    shipped: 'status-shipped',
-  };
+  // statusClass reserved for future use
+
 
   return (
     <div className="admin">
